@@ -29,4 +29,5 @@ jobs:
         app-name: 'karjava'  # Replace with your App Service name
         slot-name: 'production'
         publish-profile: ${{ secrets.AZURE_APP_SERVICE_PUBLISH_PROFILE }}
-        package: '${{ github.workspace }}/target/*.jar'
+        package: '${{ github.workspace }}/target/java-app-1.0-SNAPSHOT-jar-with-dependencies.jar'
+        startup-command: 'java -jar java-app-1.0-SNAPSHOT-jar-with-dependencies.jar'

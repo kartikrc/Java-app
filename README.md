@@ -17,17 +17,34 @@ mvn compile
 
 ## Running the Application
 
-To run the application, use:
+To run the application locally, use:
 
 ```bash
 mvn exec:java
 ```
 
-This will execute the main class and print "Hello, World!" to the console.
+This will start a web server on port 8080 (or the PORT environment variable) and respond with "Hello, World!" at the root path.
+
+To run the packaged JAR:
+
+```bash
+java -jar target/java-app-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
 
 ## CI/CD with GitHub Actions
 
 This project includes a GitHub Actions workflow for continuous integration and deployment to Azure App Service.
+
+### Setup
+
+1. Create an Azure App Service with Java runtime stack.
+2. Obtain the publish profile from the Azure portal.
+3. Add the publish profile as a secret named `AZURE_APP_SERVICE_PUBLISH_PROFILE` in your GitHub repository.
+4. Update the `app-name` in `.github/workflows/ci-cd.yml` to match your App Service name.
+
+### Deployment
+
+The workflow will automatically build and deploy on pushes to the `main` branch.
 
 ### Setup Instructions
 
