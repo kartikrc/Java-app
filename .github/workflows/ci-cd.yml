@@ -26,7 +26,7 @@ jobs:
     - name: Deploy to Azure App Service
       uses: azure/webapps-deploy@v3
       with:
-        app-name: 'your-app-service-name'  # Replace with your App Service name
+        app-name: 'karjava'  # Replace with your App Service name
         slot-name: 'production'
         publish-profile: ${{ secrets.AZURE_APP_SERVICE_PUBLISH_PROFILE }}
         package: '${{ github.workspace }}/target/*.jar'
